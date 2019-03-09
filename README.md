@@ -5,18 +5,18 @@ JDK 1.8<br/>
 Maven
 
 ## 目录结构描述
-├── Readme.md                   // help<br/>
-├── .gitignore                  // git忽略文件配置<br/>
-├── pom.xml                     // 项目pom文件<br/>
-├── src                         // 源代码目录<br/>
+    |-- Readme.md         // help
+    |-- .gitignore        // git忽略文件配置
+    |-- pom.xml           // 项目pom文件
+    |-- src               // 源代码目录
 
 
 ### 更新记录
 #### 2019-03-09 三种工厂模式代码<br/>
-路径：<br/>
+路径：            
 
-├── src                         
-├──└── main                    
-├─────└── java              
-├────────└── com.hzw.pattern              
-├───────────└── factory              
+    |-- src
+        |-- main
+                |-- java
+                        |-- com.hzw.pattern
+                                |-- factory           
