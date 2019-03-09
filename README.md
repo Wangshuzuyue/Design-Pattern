@@ -16,7 +16,7 @@ Maven
 路径：            
 
     |-- src
-        |-- main
-                |-- java
-                        |-- com.hzw.pattern
-                                |-- factory           
+           |-- main
+                  |-- java
+                          |-- com.hzw.pattern
+                                  |-- factory           
