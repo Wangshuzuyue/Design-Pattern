@@ -5,5 +5,6 @@ package com.hzw.pattern.factory;
  * @Date: 2019/3/9 13:50
  * @Description:
  */
-public class ICar {
+public interface ICar {
+    void drive();
 }
