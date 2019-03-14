@@ -1,4 +1,4 @@
-package com.hzw.pattern;
+package com.hzw.pattern.singleton;
 
 
 import com.hzw.pattern.singleton.seriable.SeriableSingleton;

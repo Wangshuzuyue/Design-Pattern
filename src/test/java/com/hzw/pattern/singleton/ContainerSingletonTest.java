@@ -1,4 +1,4 @@
-package com.hzw.pattern;
+package com.hzw.pattern.singleton;
 
 
 import com.hzw.pattern.singleton.register.ContainerSingleton;
@@ -14,7 +14,7 @@ public class ContainerSingletonTest {
             long start = System.currentTimeMillis();
             ConcurrentExecutor.execute(new ConcurrentExecutor.RunHandler() {
                 public void handler() {
-                    Object obj = ContainerSingleton.getBean("com.hzw.pattern.Pojo");;
+                    Object obj = ContainerSingleton.getBean("com.hzw.pattern.singleton.Pojo");;
                     System.out.println(System.currentTimeMillis() + ": " + obj);
                 }
             }, 10,6);

@@ -1,4 +1,4 @@
-package com.hzw.pattern;
+package com.hzw.pattern.singleton;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;

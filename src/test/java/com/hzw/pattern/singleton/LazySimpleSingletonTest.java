@@ -1,4 +1,4 @@
-package com.hzw.pattern;
+package com.hzw.pattern.singleton;
 
 /**
  * Created by Tom.
