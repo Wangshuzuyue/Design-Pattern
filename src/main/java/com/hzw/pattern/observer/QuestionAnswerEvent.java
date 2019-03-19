@@ -5,21 +5,11 @@ package com.hzw.pattern.observer;
  * @Date: 2019/3/19 11:08
  * @Description:
  */
-public class QuestionCreateEvent {
-
-    private String questioner;
+public class QuestionAnswerEvent {
 
     private String teacherName;
 
     private Question question;
-
-    public String getQuestioner() {
-        return questioner;
-    }
-
-    public void setQuestioner(String questioner) {
-        this.questioner = questioner;
-    }
 
     public String getTeacherName() {
         return teacherName;
@@ -40,7 +30,6 @@ public class QuestionCreateEvent {
     @Override
     public String toString() {
         return "QuestionCreateEvent{" +
-                "questioner='" + questioner + '\'' +
                 ", teacherName='" + teacherName + '\'' +
                 ", question=" + question +
                 '}';
