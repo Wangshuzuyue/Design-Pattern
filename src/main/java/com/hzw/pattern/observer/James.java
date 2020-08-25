@@ -7,7 +7,7 @@ import com.google.common.eventbus.EventBus;
  * @Date: 2019/3/19 11:23
  * @Description:
  */
-public class James extends Teacher{
+public class James extends AbstractTeacher {
     public James(EventBus eventBus) {
         super(eventBus, "James");
     }

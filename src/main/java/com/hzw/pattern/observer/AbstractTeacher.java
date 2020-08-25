@@ -10,11 +10,11 @@ import com.google.common.eventbus.Subscribe;
  * @Date: 2019/3/19 10:35
  * @Description:
  */
-public abstract class Teacher {
+public abstract class AbstractTeacher {
 
     private String name;
     private EventBus eventBus;
-    public Teacher(EventBus eventBus, String name) {
+    public AbstractTeacher(EventBus eventBus, String name) {
         this.name = name;
         this.eventBus = eventBus;
         eventBus.register(this);

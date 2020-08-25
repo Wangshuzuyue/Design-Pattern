@@ -7,8 +7,8 @@ import com.google.common.eventbus.EventBus;
  * @Date: 2019/3/19 14:19
  * @Description:
  */
-public class HZW extends Student{
-    public HZW(EventBus eventBus) {
+public class GPStudent extends AbstractStudent {
+    public GPStudent(EventBus eventBus) {
         super(eventBus, "hzw");
     }
 

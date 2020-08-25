@@ -10,12 +10,10 @@ import java.lang.reflect.Method;
  */
 public class SingerBroker implements MyInvocationHandler{
 
-
-    private Object target;
-
-    public Object getProxyInstance(Object target){
-        this.target = target;
-        Object o = MyProxy.newProxyInstance(new MyClassLoader(), target.getClass().getInterfaces(), this);
+    Object target;
+    public Object getProxyInstance(Class<?> clazz) throws IllegalAccessException, InstantiationException {
+        this.target = clazz.newInstance();
+        Object o = MyProxy.newProxyInstance(new MyClassLoader(), clazz.getInterfaces(), this);
         return o;
     }
 

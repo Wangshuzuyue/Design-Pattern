@@ -8,12 +8,12 @@ import com.google.common.eventbus.Subscribe;
  * @Date: 2019/3/19 10:36
  * @Description:
  */
-public abstract class Student {
+public abstract class AbstractStudent {
     private EventBus eventBus;
 
     private String name;
 
-    public Student(EventBus eventBus, String name) {
+    public AbstractStudent(EventBus eventBus, String name) {
         this.eventBus = eventBus;
         this.name = name;
         eventBus.register(this);

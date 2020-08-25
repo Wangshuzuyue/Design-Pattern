@@ -104,7 +104,7 @@ public class MyProxy {
                     //全类名
                     String type = clazz.getName();
                     //参数名
-                    String paramName = toLowerFirstCase(clazz.getSimpleName());
+                    String paramName = "arg" + i;
 
                     paramNames.append(type + " " +  paramName);
                     paramValues.append(paramName);
@@ -119,7 +119,10 @@ public class MyProxy {
                 sb.append("public " + m.getReturnType().getName() + " " + m.getName() + "(" + paramNames.toString() + ") {" + ln);
                 sb.append("try{" + ln);
                 sb.append("Method m = " + interfaces[0].getName() + ".class.getMethod(\"" + m.getName() + "\",new Class[]{" + paramClasses.toString() + "});" + ln);
-                sb.append((hasReturnValue(m.getReturnType()) ? "return " : "") + getCaseCode("this.h.invoke(this,m,new Object[]{" + paramValues + "})",m.getReturnType()) + ";" + ln);
+
+                sb.append((hasReturnValue(m.getReturnType()) ? "return " : "")
+                        + getCaseCode("this.h.invoke(this,m,new Object[]{" + paramValues + "})",m.getReturnType()) + ";" + ln);
+
                 sb.append("}catch(Error _ex) { }");
                 sb.append("catch(Throwable e){" + ln);
                 sb.append("throw new UndeclaredThrowableException(e);" + ln);
@@ -134,7 +137,7 @@ public class MyProxy {
 
 
 
-    private static Map<Class,Class> mappings = new HashMap<Class, Class>();
+    private static Map<Class,Class> mappings = new HashMap<>();
     static {
         mappings.put(int.class,Integer.class);
     }
@@ -155,7 +158,7 @@ public class MyProxy {
      * @param returnClass
      * @return
      */
-    private static String getCaseCode(String code,Class<?> returnClass){
+    private static String getCaseCode(String code, Class<?> returnClass){
         //基本类型
         if(mappings.containsKey(returnClass)){
             return "((" + mappings.get(returnClass).getName() +  ")" + code + ")." + returnClass.getSimpleName() + "Value()";

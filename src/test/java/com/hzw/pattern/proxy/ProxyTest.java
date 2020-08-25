@@ -10,8 +10,8 @@ import com.hzw.pattern.proxy.jdkproxy.ZhangJie;
  * @Description:
  */
 public class ProxyTest {
-    public static void main(String[] args) {
-        Singer singer = (Singer) new SingerBroker().getProxyInstance(new ZhangJie());
+    public static void main(String[] args) throws InstantiationException, IllegalAccessException {
+        Singer singer = (Singer) new SingerBroker().getProxyInstance(ZhangJie.class);
         int result = singer.sing("明天过后");
         System.out.println("打Call！" + result);
     }

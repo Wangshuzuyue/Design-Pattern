@@ -19,20 +19,21 @@ public class MyClassLoader extends ClassLoader{
     }
 
     /**
-     * 根据类名获取Class【当前路径】
+     * 根据类名获取Class
+     * 【只获取当前路径】
      * @param name
      * @return
      * @throws ClassNotFoundException
      */
     @Override
-    protected Class<?> findClass(String name) throws ClassNotFoundException {
+    protected Class<?> findClass(String name) {
 
         String className = MyClassLoader.class.getPackage().getName() + "." + name;
         if(classPathFile  != null){
             File classFile = new File(classPathFile,name.replaceAll("\\.","/") + ".class");
             if(classFile.exists()){
-                FileInputStream in = null;
-                ByteArrayOutputStream out = null;
+                FileInputStream in;
+                ByteArrayOutputStream out;
                 try{
                     in = new FileInputStream(classFile);
                     out = new ByteArrayOutputStream();
@@ -41,7 +42,7 @@ public class MyClassLoader extends ClassLoader{
                     while ((len = in.read(buff)) != -1){
                         out.write(buff,0,len);
                     }
-                    return defineClass(className,out.toByteArray(),0,out.size());
+                    return defineClass(className, out.toByteArray(),0, out.size());
                 }catch (Exception e){
                     e.printStackTrace();
                 }
